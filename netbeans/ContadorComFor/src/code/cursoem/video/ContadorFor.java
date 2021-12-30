@@ -40,11 +40,11 @@ public class ContadorFor extends javax.swing.JFrame {
         LbValorFim = new javax.swing.JLabel();
         LbValorPasso = new javax.swing.JLabel();
         btnCont = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        ScpMostraLista = new javax.swing.JScrollPane();
         LstMostraLista = new javax.swing.JList<>();
-        jLabel1 = new javax.swing.JLabel();
+        LbImage = new javax.swing.JLabel();
         LbTitlePrincipal = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        LbConfigureSua = new javax.swing.JLabel();
         LbDesenvolvedor = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -106,16 +106,16 @@ public class ContadorFor extends javax.swing.JFrame {
         });
 
         LstMostraLista.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jScrollPane1.setViewportView(LstMostraLista);
+        ScpMostraLista.setViewportView(LstMostraLista);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/code/cursoem/video/contador.jpg"))); // NOI18N
+        LbImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/code/cursoem/video/contador.jpg"))); // NOI18N
 
         LbTitlePrincipal.setFont(new java.awt.Font("MV Boli", 1, 20)); // NOI18N
         LbTitlePrincipal.setText("CONTADOR VIRTUAL");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel2.setText("Configure sua contagem abaixo: ");
+        LbConfigureSua.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
+        LbConfigureSua.setForeground(new java.awt.Color(255, 51, 51));
+        LbConfigureSua.setText("Configure sua contagem abaixo: ");
 
         LbDesenvolvedor.setFont(new java.awt.Font("Segoe Script", 1, 12)); // NOI18N
         LbDesenvolvedor.setText("Desenvolvido por: Álisson Alves");
@@ -131,10 +131,10 @@ public class ContadorFor extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(LbTitlePrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
+                                .addComponent(LbConfigureSua)
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1))
+                        .addComponent(LbImage))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -158,7 +158,7 @@ public class ContadorFor extends javax.swing.JFrame {
                                         .addComponent(LbValorInicio))))
                             .addComponent(btnCont, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(ScpMostraLista, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(109, 109, 109)
@@ -171,13 +171,13 @@ public class ContadorFor extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel1))
+                        .addComponent(LbImage))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(LbTitlePrincipal)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                        .addComponent(LbConfigureSua)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,10 +196,10 @@ public class ContadorFor extends javax.swing.JFrame {
                             .addComponent(LbTextoPasso))
                         .addGap(18, 18, 18)
                         .addComponent(btnCont))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ScpMostraLista, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(LbDesenvolvedor)
-                .addGap(7, 7, 7))
+                .addGap(5, 5, 5))
         );
 
         pack();
@@ -271,7 +271,9 @@ public class ContadorFor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LbConfigureSua;
     private javax.swing.JLabel LbDesenvolvedor;
+    private javax.swing.JLabel LbImage;
     private javax.swing.JLabel LbTextoFim;
     private javax.swing.JLabel LbTextoInicio;
     private javax.swing.JLabel LbTextoPasso;
@@ -280,12 +282,10 @@ public class ContadorFor extends javax.swing.JFrame {
     private javax.swing.JLabel LbValorInicio;
     private javax.swing.JLabel LbValorPasso;
     private javax.swing.JList<String> LstMostraLista;
+    private javax.swing.JScrollPane ScpMostraLista;
     private javax.swing.JSlider SldFim;
     private javax.swing.JSlider SldInicio;
     private javax.swing.JSlider SldPasso;
     private javax.swing.JButton btnCont;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
