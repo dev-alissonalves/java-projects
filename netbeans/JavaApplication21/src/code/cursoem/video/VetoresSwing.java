@@ -13,18 +13,25 @@ import javax.swing.DefaultListModel;
  */
 public class VetoresSwing extends javax.swing.JFrame {
     
+    // Declaração do vetor e do objeto ListModel
     int vetor[] = new int [5];
     DefaultListModel lista = new DefaultListModel();
-    int selecionado = 0;
+    
+    /*Esse atributo servirá para indicar qual o elemento do vetor 
+    estar selecionado em tempo de execução. Iniciando em 0 já que o vetor está vazio*/
+    int ElementoSelecionado = 0;
     
     public VetoresSwing() {
         initComponents();
+        
+        //iniciar o programa no centro da tela
         setLocationRelativeTo(null);
+        
+        //Imprimir o vetor zerado assim que inicia o programa
         for (int i = 0; i < vetor.length; i++){
             lista.addElement(vetor[i]);
         }
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,6 +49,10 @@ public class VetoresSwing extends javax.swing.JFrame {
         LbPosicaoSelecionada = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         ListVetor = new javax.swing.JList<>();
+        LbDesenvolvedor = new javax.swing.JLabel();
+        LbTitlePrincipal = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -89,67 +100,110 @@ public class VetoresSwing extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(ListVetor);
 
+        LbDesenvolvedor.setFont(new java.awt.Font("Segoe Script", 1, 12)); // NOI18N
+        LbDesenvolvedor.setText("Desenvolvido por: Álisson Alves");
+
+        LbTitlePrincipal.setFont(new java.awt.Font("MV Boli", 1, 18)); // NOI18N
+        LbTitlePrincipal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LbTitlePrincipal.setText("VETORES DINÂMICOS");
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 51, 204));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Monte seu vetor personalizado! :D");
+
+        jLabel2.setText("---------------------------------------------------------------------------------");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(TextoVetor, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LbPosicaoSelecionada, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap()
+                        .addComponent(LbTitlePrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(BtAdicionar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BtRemover, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BtOrdenar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(SpnValorInserir, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(10, 10, 10))
+                        .addGap(69, 69, 69)
+                        .addComponent(LbDesenvolvedor)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(BtAdicionar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(BtRemover, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(BtOrdenar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(SpnValorInserir, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(TextoVetor, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(LbPosicaoSelecionada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LbPosicaoSelecionada)
-                    .addComponent(TextoVetor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(LbTitlePrincipal)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LbPosicaoSelecionada)
+                            .addComponent(TextoVetor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(SpnValorInserir, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
                         .addComponent(BtAdicionar)
                         .addGap(20, 20, 20)
                         .addComponent(BtRemover)
                         .addGap(20, 20, 20)
-                        .addComponent(BtOrdenar))
-                    .addComponent(jScrollPane1))
-                .addContainerGap(21, Short.MAX_VALUE))
+                        .addComponent(BtOrdenar)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addComponent(LbDesenvolvedor)
+                .addGap(5, 5, 5))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtAdicionarActionPerformed
-        vetor[selecionado] = Integer.parseInt(SpnValorInserir.getValue().toString());
+        //O primeiro elemento do vetor será incluído na posição 0
+        vetor[ElementoSelecionado] = Integer.parseInt(SpnValorInserir.getValue().toString());
+        
+        //Limpando a lista para poder mostrá-la mostrá-la 
         lista.removeAllElements();
         for (int i = 0; i < vetor.length; i++){
             lista.addElement(vetor[i]);
         }
+        //Apagando o valor do spinner após a inclusão
+        SpnValorInserir.setValue(0);
     }//GEN-LAST:event_BtAdicionarActionPerformed
 
     private void ListVetorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListVetorMouseClicked
-        selecionado = ListVetor.getSelectedIndex();
-        LbPosicaoSelecionada.setText("[ " + selecionado + " ]");
+        // Atribuindo o valor do elemento selecionado pelo mouse a variável ElementoSelecionado que antes valia 0
+        ElementoSelecionado = ListVetor.getSelectedIndex();
+        //Mostrando no label acima da lista o índice do elemento selecionado no vetor
+        LbPosicaoSelecionada.setText("[ " + ElementoSelecionado + " ]");
     }//GEN-LAST:event_ListVetorMouseClicked
 
     private void BtRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtRemoverActionPerformed
-        vetor[selecionado] = 0;
+        //Ao clicar no botão remover o elemento selecionado será substituído por 0
+        vetor[ElementoSelecionado] = 0;
         lista.removeAllElements();
         for (int i = 0; i < vetor.length; i++){
             lista.addElement(vetor[i]);
@@ -157,6 +211,7 @@ public class VetoresSwing extends javax.swing.JFrame {
     }//GEN-LAST:event_BtRemoverActionPerformed
 
     private void BtOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtOrdenarActionPerformed
+        //Usando o método sort para ordenar todo o vetor
         Arrays.sort(vetor);
         lista.removeAllElements();
         for (int i = 0; i < vetor.length; i++){
@@ -203,10 +258,14 @@ public class VetoresSwing extends javax.swing.JFrame {
     private javax.swing.JButton BtAdicionar;
     private javax.swing.JButton BtOrdenar;
     private javax.swing.JButton BtRemover;
+    private javax.swing.JLabel LbDesenvolvedor;
     private javax.swing.JLabel LbPosicaoSelecionada;
+    private javax.swing.JLabel LbTitlePrincipal;
     private javax.swing.JList<String> ListVetor;
     private javax.swing.JSpinner SpnValorInserir;
     private javax.swing.JLabel TextoVetor;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
