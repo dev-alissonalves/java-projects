@@ -1,11 +1,10 @@
 
 public class CarrinhoDeCompras{
 
+	double valorTotal;
+	
 	//Construtor recebendo uma instância de Pizza
 	public CarrinhoDeCompras(Pizza p) {
-	}
-	
-	public int ValorTotalCarrinho(Pizza p) {
-		return Pizza.contabilizarIngredientes();
+		this.valorTotal = Pizza.contabilizarIngredientes();
 	}
 }
