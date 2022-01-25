@@ -8,7 +8,6 @@ public class Principal {
 		corridaDaAmizade.adicionaCarro(new CarroSoma("CarroB", 8, 130));
 		corridaDaAmizade.adicionaCarro(new CarroMultiplica("CarroC", 1.7, 100));
 		corridaDaAmizade.adicionaCarro(new CarroMultiplica("CarroD", 1.4, 150));
-		
 		corridaDaAmizade.umDoisTresEJa();
 	}
 }
