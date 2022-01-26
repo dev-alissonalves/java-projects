@@ -19,12 +19,12 @@ class testesComprasParceladas {
 	@Test
 	void testeCincoParcelas() {
 		CompraParcelada cp = new CompraParcelada(1000, 5, 0.10);
-		assertEquals(8050.0, cp.valorTotalCompra());
+		assertEquals(8053.0, cp.valorTotalCompra());
 	}
 	
 	@Test
 	void testeDezParcelas() {
 		CompraParcelada cp = new CompraParcelada(1000, 10, 0.10);
-		assertEquals(25930.0, cp.valorTotalCompra());
+		assertEquals(25937.0, cp.valorTotalCompra());
 	}
 }

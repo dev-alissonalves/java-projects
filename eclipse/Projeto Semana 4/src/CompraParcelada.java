@@ -11,10 +11,10 @@ public class CompraParcelada extends Compra{
 	}
 
 	@Override
-	public int valorTotalCompra() {
+	public double valorTotalCompra() {
 		for (int i = 1; i <= qtdParcelas; i++) {
 			valorTotalCompra += getValorCompra() * Math.pow((1+jurosMensais), qtdParcelas);
 		}
-		return valorTotalCompra;
+		return (Math.round(valorTotalCompra));
 	}
 }

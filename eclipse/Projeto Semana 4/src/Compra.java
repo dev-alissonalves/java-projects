@@ -1,6 +1,7 @@
 public class Compra {
+	
 	private double valorCompra;
-	protected int valorTotalCompra;
+	protected double valorTotalCompra;
 	
 	public Compra(double valorCompra) {
 		this.valorCompra = valorCompra;
@@ -10,8 +11,8 @@ public class Compra {
 		return valorCompra;
 	}
 	
-	public int valorTotalCompra() {
+	public double valorTotalCompra() {
 		valorTotalCompra += getValorCompra();
-		return valorTotalCompra;
+		return (Math.round(valorTotalCompra));
 	}
 }
